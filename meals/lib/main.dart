@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'screens/tabs_screen.dart';
+
+import 'data/dummy_data.dart';
+import 'models/meal.dart';
+import 'models/settings.dart';
 import 'screens/categories_meals_screen.dart';
 import 'screens/meal_detail_screen.dart';
 import 'screens/settings_screen.dart';
+import 'screens/tabs_screen.dart';
 import 'utils/app_routes.dart';
-import 'models/meal.dart';
-import 'models/settings.dart';
-import 'data/dummy_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,19 +33,14 @@ class _MyAppState extends State<MyApp> {
         final filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
         final filterVegan = settings.isVegan && !meal.isVegan;
         final filterVegetarian = settings.isVegetarian && !meal.isVegetarian;
-        return !filterGluten &&
-            !filterLactose &&
-            !filterVegan &&
-            !filterVegetarian;
+        return !filterGluten && !filterLactose && !filterVegan && !filterVegetarian;
       }).toList();
     });
   }
 
   void _toggleFavorite(Meal meal) {
     setState(() {
-      _favoriteMeals.contains(meal)
-          ? _favoriteMeals.remove(meal)
-          : _favoriteMeals.add(meal);
+      _favoriteMeals.contains(meal) ? _favoriteMeals.remove(meal) : _favoriteMeals.add(meal);
     });
   }
 
@@ -55,27 +51,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Vamos Cozinhar?',
+      title: 'Let`s cook?',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.pink,
-          secondary: Colors.amber,
-        ),
-        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(primary: Colors.pink, secondary: Colors.amberAccent),
+        canvasColor: Colors.white,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: const TextStyle(
                 fontSize: 20,
-                fontFamily: 'RobotoCondensed',
+                fontFamily: 'Raleway-Regular',
               ),
             ),
       ),
       routes: {
         AppRoutes.home: (ctx) => TabsScreen(_favoriteMeals),
-        AppRoutes.categoriesMeals: (ctx) =>
-            CategoriesMealsScreen(_availableMeals),
-        AppRoutes.mealDetail: (ctx) =>
-            MealDetailScreen(_toggleFavorite, _isFavorite),
+        AppRoutes.categoriesMeals: (ctx) => CategoriesMealsScreen(_availableMeals),
+        AppRoutes.mealDetail: (ctx) => MealDetailScreen(_toggleFavorite, _isFavorite),
         AppRoutes.settings: (ctx) => SettingsScreen(settings, _filterMeals),
       },
     );

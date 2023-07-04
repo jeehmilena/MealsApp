@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../utils/app_routes.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -13,9 +14,8 @@ class MainDrawer extends StatelessWidget {
       title: Text(
         label,
         style: const TextStyle(
-          fontFamily: 'RobotoCondensed',
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+          fontFamily: 'Raleway-Regular',
+          fontSize: 18,
         ),
       ),
       onTap: onTap,
@@ -28,15 +28,15 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 120,
+            height: 200,
             width: double.infinity,
             padding: const EdgeInsets.all(20),
             color: Theme.of(context).colorScheme.secondary,
-            alignment: Alignment.bottomRight,
+            alignment: Alignment.bottomCenter,
             child: Text(
-              'Vamos Cozinhar?',
+              'Let`s Cook?',
               style: TextStyle(
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w400,
                 fontSize: 30,
                 color: Theme.of(context).colorScheme.primary,
               ),
@@ -45,14 +45,13 @@ class MainDrawer extends StatelessWidget {
           const SizedBox(height: 20),
           _createItem(
             Icons.restaurant,
-            'Refeições',
+            'Meals',
             () => Navigator.of(context).pushReplacementNamed(AppRoutes.home),
           ),
           _createItem(
             Icons.settings,
-            'Configurações',
-            () =>
-                Navigator.of(context).pushReplacementNamed(AppRoutes.settings),
+            'Settings',
+            () => Navigator.of(context).pushReplacementNamed(AppRoutes.settings),
           ),
         ],
       ),

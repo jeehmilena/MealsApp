@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../models/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
   final Function(Meal) onToggleFavorite;
   final bool Function(Meal) isFavorite;
 
-  const MealDetailScreen(this.onToggleFavorite, this.isFavorite, {Key? key})
-      : super(key: key);
+  const MealDetailScreen(this.onToggleFavorite, this.isFavorite, {Key? key}) : super(key: key);
 
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
@@ -18,15 +18,15 @@ class MealDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _createSectionContainer(Widget child) {
+  Widget _createSectionContainer(Widget child, BuildContext context) {
     return Container(
-      width: 330,
-      height: 200,
+      width: MediaQuery.of(context).size.width,
+      height: 250,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade200),
         borderRadius: BorderRadius.circular(10),
       ),
       child: child,
@@ -52,7 +52,7 @@ class MealDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            _createSectionTitle(context, 'Ingredientes'),
+            _createSectionTitle(context, 'Ingredients'),
             _createSectionContainer(
               ListView.builder(
                 itemCount: meal.ingredients.length,
@@ -69,28 +69,35 @@ class MealDetailScreen extends StatelessWidget {
                   );
                 },
               ),
+              context,
             ),
-            _createSectionTitle(context, 'Passos'),
-            _createSectionContainer(ListView.builder(
-              itemCount: meal.steps.length,
-              itemBuilder: (ctx, index) {
-                return Column(
-                  children: [
-                    ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Theme.of(context).colorScheme.primary,
-                        child: Text(
-                          '${index + 1}',
-                          style: const TextStyle(color: Colors.white),
+            _createSectionTitle(context, 'Steps'),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 42),
+              child: _createSectionContainer(
+                ListView.builder(
+                  itemCount: meal.steps.length,
+                  itemBuilder: (ctx, index) {
+                    return Column(
+                      children: [
+                        ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Theme.of(context).colorScheme.primary,
+                            child: Text(
+                              '${index + 1}',
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                          ),
+                          title: Text(meal.steps[index]),
                         ),
-                      ),
-                      title: Text(meal.steps[index]),
-                    ),
-                    const Divider(),
-                  ],
-                );
-              },
-            )),
+                        const Divider(),
+                      ],
+                    );
+                  },
+                ),
+                context,
+              ),
+            ),
           ],
         ),
       ),

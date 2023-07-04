@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+
 import '../models/category.dart';
 import '../models/meal.dart';
 
 const dummyCategories = [
   Category(
     id: 'c1',
-    title: 'Italiano',
+    title: 'Italian',
     color: Colors.purple,
   ),
   Category(
     id: 'c2',
-    title: 'Rápido & Fácil',
+    title: 'Quick & Easy',
     color: Colors.red,
   ),
   Category(
@@ -20,37 +21,37 @@ const dummyCategories = [
   ),
   Category(
     id: 'c4',
-    title: 'Alemã',
+    title: 'German',
     color: Colors.amber,
   ),
   Category(
     id: 'c5',
-    title: 'Leve & Saudável',
+    title: 'Light & Healthy',
     color: Colors.indigo,
   ),
   Category(
     id: 'c6',
-    title: 'Exótica',
+    title: 'Exotic',
     color: Colors.green,
   ),
   Category(
     id: 'c7',
-    title: 'Café da Manhã',
+    title: 'Breakfast',
     color: Colors.lightBlue,
   ),
   Category(
     id: 'c8',
-    title: 'Asiática',
+    title: 'Asian',
     color: Colors.lightGreen,
   ),
   Category(
     id: 'c9',
-    title: 'Francesa',
+    title: 'French',
     color: Colors.pink,
   ),
   Category(
     id: 'c10',
-    title: 'Verão',
+    title: 'Summer',
     color: Colors.teal,
   ),
 ];
@@ -93,8 +94,7 @@ const dummyMeals = [
     title: 'Toast Hawaii',
     cost: Cost.cheap,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
     duration: 10,
     ingredients: [
       '1 Slice White Bread',
@@ -119,8 +119,7 @@ const dummyMeals = [
     title: 'Classic Hamburger',
     cost: Cost.fair,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
     duration: 45,
     ingredients: [
       '300g Cattle Hack',
@@ -148,8 +147,7 @@ const dummyMeals = [
     title: 'Wiener Schnitzel',
     cost: Cost.expensive,
     complexity: Complexity.medium,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
     duration: 60,
     ingredients: [
       '8 Veal Cutlets',
@@ -181,8 +179,7 @@ const dummyMeals = [
     title: 'Salad with Smoked Salmon',
     cost: Cost.expensive,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
     duration: 15,
     ingredients: [
       'Arugula',
@@ -213,8 +210,7 @@ const dummyMeals = [
     title: 'Delicious Orange Mousse',
     cost: Cost.cheap,
     complexity: Complexity.difficult,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
     duration: 240,
     ingredients: [
       '4 Sheets of Gelatine',
@@ -246,8 +242,7 @@ const dummyMeals = [
     title: 'Pancakes',
     cost: Cost.cheap,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
     duration: 20,
     ingredients: [
       '1 1/2 Cups all-purpose Flour',
@@ -275,8 +270,7 @@ const dummyMeals = [
     title: 'Creamy Indian Chicken Curry',
     cost: Cost.fair,
     complexity: Complexity.medium,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
     duration: 35,
     ingredients: [
       '4 Chicken Breasts',
@@ -306,8 +300,7 @@ const dummyMeals = [
     title: 'Chocolate Souffle',
     cost: Cost.cheap,
     complexity: Complexity.difficult,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
     duration: 45,
     ingredients: [
       '1 Teaspoon melted Butter',
@@ -353,8 +346,7 @@ const dummyMeals = [
     title: 'Asparagus Salad with Cherry Tomatoes',
     cost: Cost.expensive,
     complexity: Complexity.simple,
-    imageUrl:
-        'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
+    imageUrl: 'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
     duration: 30,
     ingredients: [
       'White and Green Asparagus',

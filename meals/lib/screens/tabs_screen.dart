@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'categories_screen.dart';
-import 'favorite_screen.dart';
+
 import '../components/main_drawer.dart';
 import '../models/meal.dart';
+import 'categories_screen.dart';
+import 'favorite_screen.dart';
 
 class TabsScreen extends StatefulWidget {
   final List<Meal> favoriteMeals;
@@ -23,11 +24,11 @@ class _TabsScreenState extends State<TabsScreen> {
     super.initState();
     _screens = [
       {
-        'title': 'Lista de Categorias',
+        'title': 'Category List',
         'screen': const CategoriesScreen(),
       },
       {
-        'title': 'Meus Favoritos',
+        'title': 'My Favorites',
         'screen': FavoriteScreen(widget.favoriteMeals),
       },
     ];
@@ -58,11 +59,11 @@ class _TabsScreenState extends State<TabsScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
-            label: 'Categorias',
+            label: 'Categories',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star),
-            label: 'Favoritos',
+            label: 'Favorites',
           ),
         ],
       ),
